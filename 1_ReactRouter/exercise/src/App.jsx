@@ -1,9 +1,12 @@
 // App.js
 import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
+import './App.css';
 
 function App() {
 
@@ -12,13 +15,19 @@ function App() {
   // TODO: How doe sthe Layout component know which page to render?
 
   return (
-    <Layout selectedPage={page} onSetPage={setPage}>
+    <Router>
 
-      {page === 'home' && <HomePage />}
-      {page === 'about' && <AboutPage />}
-      {page === 'contact' && <ContactPage />}
+      <Layout selectedPage={page} onSetPage={setPage}>
 
-    </Layout>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+        </Routes>
+
+      </Layout>
+    </Router>
   );
 }
 

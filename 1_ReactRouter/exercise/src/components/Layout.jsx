@@ -1,5 +1,6 @@
 import NavBar from './NavBar'
 import Footer from './Footer';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const pages = [
   { name: 'Home', key: 'home' },
@@ -12,7 +13,7 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
   // TODO: what's stored in children, selectedPage, and onSetPage?
 
   const renderPageLinks = () => {
-        
+
     // TODO: What does this function do?
     return pages.map(page => (
        <li
@@ -50,7 +51,7 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
 
       {/* Footer */}
       <Footer />
-     
+
     </div>
   );
 };
