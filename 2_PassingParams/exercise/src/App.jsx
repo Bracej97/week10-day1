@@ -28,7 +28,7 @@ function App() {
               <Link to="/portfolio">Portfolio</Link>
             </li>
             <li>
-              <Link to="/search?q=hello+world">Search</Link>
+              <Link to="/search?q=hello+world&oq=test+this+out">Search</Link>
             </li>
           </ul>
         </nav>
